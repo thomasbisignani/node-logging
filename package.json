@@ -1,0 +1,23 @@
+{
+  "name": "node-logging",
+  "version": "1.0.0",
+  "description": "Logging with NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasbisignani/node-logging.git"
+  },
+  "author": "tbisignani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomasbisignani/node-logging/issues"
+  },
+  "homepage": "https://github.com/thomasbisignani/node-logging#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "morgan": "^1.6.1"
+  }
+}
