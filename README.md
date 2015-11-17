@@ -6,3 +6,6 @@ Logging example with NodeJS, Express and Morgan middleware.
 
 ### Starting the node server :
     node app.js
+
+### Running  :
+    Open http://localhost:1337 in your browser
