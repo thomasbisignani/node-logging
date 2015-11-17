@@ -1,9 +1,14 @@
 var express = require('express');
 var morgan = require('morgan');
+var fs = require('fs');
 
 var app = express();
 
-app.use(morgan('dev'));
+// Create stream
+var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'})
+
+// Setup and use the logger
+app.use(morgan('common', {stream: accessLogStream}))
 
 app.get('/', function(req, res) {
     res.setHeader('Content-Type', 'text/plain');
@@ -19,5 +24,8 @@ app.use(function(req, res, next){
     res.status(404).send('Page not found');
 });
 
-app.listen(1337);
-console.log("Server running...");
+// Running the server application
+var server = app.listen(1337, function () {
+  var port = server.address().port;
+  console.log('Server is running on localhost:%s', port);
+});

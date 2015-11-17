@@ -7,5 +7,6 @@ Logging example with NodeJS, Express and Morgan middleware.
 #### Running the node app :
     node app.js
 
-#### Lanching the application :
-Open http://localhost:1337 in your browser
+#### Launching the application :
+* Open [http://localhost:1337](http://localhost:1337) in your browser
+* Check your **access.log** file into the project root folder
