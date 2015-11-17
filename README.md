@@ -1,11 +1,11 @@
 # node-logging
 Logging example with NodeJS, Express and Morgan middleware.
 
-### Install :
+#### Install :
     npm install
 
-### Starting the node server :
+#### Running the node app :
     node app.js
 
-### Running  :
-    Open http://localhost:1337 in your browser
+#### Lanching the application :
+Open http://localhost:1337 in your browser
