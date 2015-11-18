@@ -1,26 +1,28 @@
 var express = require('express');
+var router = express.Router();
 var morgan = require('morgan');
 var fs = require('fs');
 
 var app = express();
 
-// Create stream
+// Setup and mount the morgan logger
 var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'});
-
-// Setup and use the logger
 app.use(morgan('common', {stream: accessLogStream}))
 
+// Mount the router for all routes
+app.use(router);
+
 // Routes HTTP requests
-app.get('/', function(req, res) {
-    res.setHeader('Content-Type', 'text/plain');
+router.get('/', function(req, res) {
+    res.setHeader('Content-Type', 'text/plain')
     res.end('Home');
 });
-app.get('/foo', function(req, res) {
+router.get('/foo', function(req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.end('bar');
 });
 
-app.use(function(req, res, next) {
+app.use(function(req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.status(404).send('Page not found');
 });
