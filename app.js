@@ -29,6 +29,6 @@ app.use(function(req, res) {
 
 // Running the server application
 var server = app.listen(1337, function () {
-  var port = server.address().port;
-  console.log('Server is running on localhost:%s', port);
+    var port = server.address().port;
+    console.log('Server is running on localhost:%s', port);
 });
